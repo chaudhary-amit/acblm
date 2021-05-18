@@ -81,7 +81,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Mixture model example for three sided heterogeniety</h1>
             
-            <h4 class="date">17 May, 2021</h4>
+            <h4 class="date">18 May, 2021</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/chaudhary-amit/acblm/blob/master/vignettes/acblm_example.Rmd"><code>vignettes/acblm_example.Rmd</code></a></small>
       <div class="hidden name"><code>acblm_example.Rmd</code></div>
@@ -153,31 +153,31 @@
 <a href="#step-1-of-estimation-clustering-manager-and-firms" class="anchor"></a>Step 1 of estimation : Clustering manager and firms</h1>
 <div class="sourceCode"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ad_employee_em</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/threeSided.Clustering.html">threeSided.Clustering</a></span><span class="op">(</span><span class="va">test_data</span><span class="op">)</span> <span class="co"># simulated data  </span></code></pre></div>
-<pre><code>## INFO [2021-05-17 13:15:21] here i am 
-## INFO [2021-05-17 13:15:22] generating measures for firms
-## INFO [2021-05-17 13:15:22] processing 6000 unique id's
-## INFO [2021-05-17 13:15:22] computing measures...
-## INFO [2021-05-17 13:15:22] computing weights...
-## INFO [2021-05-17 13:15:23] clustering T=51.002687, Nw=20 , measure=ecdf
-## INFO [2021-05-17 13:15:23] running weigthed kmeans step=250 total=1000
-## INFO [2021-05-17 13:15:23] nobs=6000 nmeasures=20
-## INFO [2021-05-17 13:15:23] running weighted k-means [25%] completed 
-## INFO [2021-05-17 13:15:24] running weighted k-means [50%] completed &lt;&lt;&lt;&lt;&lt;
-## INFO [2021-05-17 13:15:24] running weighted k-means [75%] completed &lt;&lt;&lt;&lt;&lt;
-## INFO [2021-05-17 13:15:25] running weighted k-means [100%] completed &lt;&lt;&lt;&lt;&lt;
-## INFO [2021-05-17 13:15:25] k=2 WSS=945.565383 nstart=1000 ids=6000
-## INFO [2021-05-17 13:15:26] generating measures for managers
-## INFO [2021-05-17 13:15:26] processing 6000 unique id's
-## INFO [2021-05-17 13:15:26] computing measures...
-## INFO [2021-05-17 13:15:26] computing weights...
-## INFO [2021-05-17 13:15:26] clustering T=51.008960, Nw=20 , measure=ecdf
-## INFO [2021-05-17 13:15:26] running weigthed kmeans step=250 total=1000
-## INFO [2021-05-17 13:15:26] nobs=6000 nmeasures=20
-## INFO [2021-05-17 13:15:27] running weighted k-means [25%] completed 
-## INFO [2021-05-17 13:15:27] running weighted k-means [50%] completed &lt;&lt;&lt;&lt;&lt;
-## INFO [2021-05-17 13:15:28] running weighted k-means [75%] completed &lt;&lt;&lt;&lt;&lt;
-## INFO [2021-05-17 13:15:29] running weighted k-means [100%] completed &lt;&lt;&lt;&lt;&lt;
-## INFO [2021-05-17 13:15:29] k=2 WSS=945.607584 nstart=1000 ids=6000</code></pre>
+<pre><code>## INFO [2021-05-18 02:06:08] here i am 
+## INFO [2021-05-18 02:06:08] generating measures for firms
+## INFO [2021-05-18 02:06:08] processing 6000 unique id's
+## INFO [2021-05-18 02:06:08] computing measures...
+## INFO [2021-05-18 02:06:08] computing weights...
+## INFO [2021-05-18 02:06:09] clustering T=51.002687, Nw=20 , measure=ecdf
+## INFO [2021-05-18 02:06:09] running weigthed kmeans step=250 total=1000
+## INFO [2021-05-18 02:06:09] nobs=6000 nmeasures=20
+## INFO [2021-05-18 02:06:09] running weighted k-means [25%] completed 
+## INFO [2021-05-18 02:06:10] running weighted k-means [50%] completed &lt;&lt;&lt;&lt;&lt;
+## INFO [2021-05-18 02:06:11] running weighted k-means [75%] completed &lt;&lt;&lt;&lt;&lt;
+## INFO [2021-05-18 02:06:11] running weighted k-means [100%] completed &lt;&lt;&lt;&lt;&lt;
+## INFO [2021-05-18 02:06:11] k=2 WSS=945.565383 nstart=1000 ids=6000
+## INFO [2021-05-18 02:06:12] generating measures for managers
+## INFO [2021-05-18 02:06:12] processing 6000 unique id's
+## INFO [2021-05-18 02:06:12] computing measures...
+## INFO [2021-05-18 02:06:12] computing weights...
+## INFO [2021-05-18 02:06:12] clustering T=51.008960, Nw=20 , measure=ecdf
+## INFO [2021-05-18 02:06:12] running weigthed kmeans step=250 total=1000
+## INFO [2021-05-18 02:06:12] nobs=6000 nmeasures=20
+## INFO [2021-05-18 02:06:13] running weighted k-means [25%] completed 
+## INFO [2021-05-18 02:06:13] running weighted k-means [50%] completed &lt;&lt;&lt;&lt;&lt;
+## INFO [2021-05-18 02:06:14] running weighted k-means [75%] completed &lt;&lt;&lt;&lt;&lt;
+## INFO [2021-05-18 02:06:15] running weighted k-means [100%] completed &lt;&lt;&lt;&lt;&lt;
+## INFO [2021-05-18 02:06:15] k=2 WSS=945.607584 nstart=1000 ids=6000</code></pre>
 </div>
 <div id="step-2-of-estimation-model-parameters-estimation-modified-em-see-paper" class="section level1">
 <h1 class="hasAnchor">
@@ -190,16 +190,16 @@
 ##  Since R version 3.2.0, base's cbind() should work fine with S4 objects</code></pre>
 <pre><code>## Warning: 'rBind' is deprecated.
 ##  Since R version 3.2.0, base's rbind() should work fine with S4 objects</code></pre>
-<pre><code>## INFO [2021-05-17 13:15:33] [ 29][para0][final] lik=-817.8422 dlik=5.8178e-08 liks=-8.1752e+02 likm=0.0000e+00
-## INFO [2021-05-17 13:15:33] res para : value at model start
-## INFO [2021-05-17 13:15:33] starting repetitions with 1 nodes
-## INFO [2021-05-17 13:15:35] [ 37][paraf (1/1)][final] lik=-95979.7050 dlik=8.9607e-08 liks=-9.5978e+04 likm=0.0000e+00
-## INFO [2021-05-17 13:15:39] [ 62][para1 (1/1)][final] lik=-138.3642 dlik=9.8202e-08 liks=-1.3805e+02 likm=0.0000e+00
-## INFO [2021-05-17 13:15:41] [ 22][move1 (1/1)][final] lik=11630.2041 dlik=7.2779e-08 liks=1.1631e+04 likm=0.0000e+00
-## INFO [2021-05-17 13:15:41] done with reptitions 1/1
-## INFO [2021-05-17 13:15:41] drawing 0.100000 from the stayers
-## INFO [2021-05-17 13:15:41] selecting best model
-## INFO [2021-05-17 13:15:41] print pk0,nf*nx,nk  
+<pre><code>## INFO [2021-05-18 02:06:19] [ 29][para0][final] lik=-817.8422 dlik=5.8178e-08 liks=-8.1752e+02 likm=0.0000e+00
+## INFO [2021-05-18 02:06:19] res para : value at model start
+## INFO [2021-05-18 02:06:19] starting repetitions with 1 nodes
+## INFO [2021-05-18 02:06:21] [ 37][paraf (1/1)][final] lik=-95979.7050 dlik=8.9607e-08 liks=-9.5978e+04 likm=0.0000e+00
+## INFO [2021-05-18 02:06:26] [ 62][para1 (1/1)][final] lik=-138.3642 dlik=9.8202e-08 liks=-1.3805e+02 likm=0.0000e+00
+## INFO [2021-05-18 02:06:27] [ 22][move1 (1/1)][final] lik=11630.2041 dlik=7.2779e-08 liks=1.1631e+04 likm=0.0000e+00
+## INFO [2021-05-18 02:06:27] done with reptitions 1/1
+## INFO [2021-05-18 02:06:28] drawing 0.100000 from the stayers
+## INFO [2021-05-18 02:06:28] selecting best model
+## INFO [2021-05-18 02:06:28] print pk0,nf*nx,nk  
 ##           [,1]      [,2]
 ## [1,] 0.7773345 0.2226655
 ## [2,] 0.8004161 0.1995839
@@ -215,7 +215,7 @@
 ##           [,1]      [,2]      [,3]      [,4]
 ## [1,] 0.8478242 0.6990319 0.8263462 0.6430779
 ## 
-## INFO [2021-05-17 13:15:42] drawing here
+## INFO [2021-05-18 02:06:28] drawing here
 ##   cor_kl cor_km cor_lm cov_kl cov_km cov_lm  var_k  var_l  var_m    rsq
 ## 1  0.183 0.0464 0.0104 0.0574 0.0282 0.0012 0.7599 0.0324 0.1208 0.7002</code></pre>
 <div class="sourceCode"><pre class="downlit sourceCode r">

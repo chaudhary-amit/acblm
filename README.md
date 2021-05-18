@@ -1,8 +1,8 @@
 # acblm
 
-This R package is for estimating distribution of latent factors where unobserved heterogeneity is three-sided.  The model takes matched panel data as an input and allows unrestricted non- linear interaction between the three factors (eg. workers-managers-firms in paper). You can find documentation for the acblm package here [acblm documentation](https://www.chaudhary-amit.com/acblm/index.html).
+This R package is for estimating distribution of latent factors where unobserved heterogeneity is three-sided.  The model takes matched panel data as an input and allows unrestricted non- linear interaction between the three factors (eg. workers-managers-firms in paper). You can find documentation for the acblm package here [acblm documentation](https://www.chaudhary-amit.com/acblm/docs/index.html).
 
-There is a simple example on simulated data here: [tutorial](https://www.chaudhary-amit.com/acblm/docs/index.html).
+There is a simple example on simulated data here: [tutorial](https://www.chaudhary-amit.com/acblm/docs/articles/acblm_example.html).
 
 Here is the link of github repository: [github](https://github.com/chaudhary-amit/acblm).
 
