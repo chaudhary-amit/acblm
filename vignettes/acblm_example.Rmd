@@ -1,0 +1,115 @@
+---
+title: "Mixture model example for three sided heterogeniety"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+  toc: true
+toc_depth: 3
+toc_float:
+  collapsed: false
+smooth_scroll: false
+editor_options:
+  chunk_output_type: console
+---
+
+Simulating and estimating the mixture model
+
+```{r,message=FALSE,warning=FALSE}
+require(acblm)
+require(knitr)
+require(kableExtra)
+options(knitr.table.format = "html") 
+knitr::opts_chunk$set(dev = "png", dev.args = list(type = "cairo-png"))
+```
+
+
+# Simulating a data set
+
+In time period $t$, the distribution which depends on the type $\alpha_i$ (worker in paper), class $m_{it}$ (manager in paper) and the class $k_{it}$ (firm class in paper). 
+
+$$Pr[Y_{it} \leq y|m_{it}=m,k_{it}=k,\alpha_i=\alpha]=F_{mk\alpha}(y)$$
+
+```{r}
+set.seed(3236)
+
+# three sided model
+model_test = m2.mixt.new(nk=2,nf=2,nb=2)
+
+# model initializer for beta tests 
+model <- ModelInitializer()
+
+# assign the means of distributions system has simple complementarity 
+model_test$A1[1,,]=model$A1[1,1:2,]
+model_test$A1[2,,]=model$A1[1,3:4,]
+
+# assign the variance of distribution ( small: will help in convergence on desktop)
+model_test$S1[] = 0.1
+model_test$S2[] = 0.1
+
+# Simple case when distribution at T=2 is same to T=1 
+model_test$A2 = model_test$A1
+
+model_test$NNm[,,,] = 1000
+model_test$pk1[,,]=0.5
+model_test$pk0[,,]=0.5
+
+
+pk1    = rdirichlet(2*2*2*2,rep(1,2))
+
+dim(pk1) = c(2*2, 2*2 , 2)
+model_test$pk1 = pk1
+
+
+pk0    = rdirichlet(2*2,rep(1,2))
+dim(pk0) = c(2,2,2)
+model_test$pk0 = pk0
+
+# simulate the data 
+test_data <- Simulate.data.threeSided(model_test)
+
+```
+# Set the model controls 
+```{r}
+
+ctrl <- set.solver.controls(model_test,         # Model  
+                            n_startValues=1,    # number of starting values
+                            stayers_sample=0.1) # if want to subsample the stayers data 
+```
+# Step 1 of estimation : Clustering manager and firms  
+```{r}
+
+ad_employee_em <- threeSided.Clustering(test_data) # simulated data  
+
+```
+# Step 2 of estimation : Model parameters estimation (modified EM: see paper) 
+```{r}
+ 
+my_model_test_cluster <- estimation.threeSided.model(model_test, # model 
+                                                    ad_employee_em, # data with step 1 estimation results 
+                                                    ctrl) # control parametrs for solver 
+# Estimation results for mean                                                     
+my_model_test_cluster$model$A1[1,,]
+```
+
+# Proportion plots
+```{r}
+# for manager class 1 
+threeSided.proportion.plot(my_model_test_cluster, m=1)
+
+# for manager class 2
+threeSided.proportion.plot(my_model_test_cluster, m=2)
+
+```
+# Estimated parameters (means)  
+
+```{r}
+
+
+# for manager class 1 
+threeSided.means.plot(my_model_test_cluster, m=1)
+
+# for manager class 2
+threeSided.means.plot(my_model_test_cluster, m=2)
+
+```
+
